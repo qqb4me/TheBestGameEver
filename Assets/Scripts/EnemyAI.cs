@@ -7,8 +7,10 @@ public class EnemyAI : MonoBehaviour
 {
     public float viewAngel;
     public float damage = 30;
+    public float attackDistance = 1f;
     public List<Transform> patrolPoints;
     public PlayerController player;
+    public Animator animator;
 
     private NavMeshAgent _navMashAgent;
     private bool _isPlayerNoticed;
@@ -41,15 +43,25 @@ public class EnemyAI : MonoBehaviour
         {
             if (_navMashAgent.remainingDistance <= _navMashAgent.stoppingDistance)
             {
-                _playerHealth.DealDamage(damage * Time.deltaTime);
+                animator.SetTrigger("attack");
             }
         }
     }
 
-    private void NoticePlayerUpdate()
+    public void AttackDamage()
     {
-        var direction = player.transform.position - transform.position;
+        if (!_isPlayerNoticed) return;
+        if (_navMashAgent.remainingDistance > (_navMashAgent.stoppingDistance + attackDistance)) return;
+        _playerHealth.DealDamage(damage);
+    }
+
+    private void NoticePlayerUpdate()
+    {   
         _isPlayerNoticed = false;
+        if (!_playerHealth.IsAlife()) return;
+
+        var direction = player.transform.position - transform.position;
+
         if (Vector3.Angle(transform.forward, direction) < viewAngel)
         {
             RaycastHit hit;
