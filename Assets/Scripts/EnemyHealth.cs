@@ -10,9 +10,23 @@ public class EnemyHealth : MonoBehaviour
     public float value = 100;
     public Animator animator;
 
+    private PlayerProgress playerProgress;
+
+    public Explosion explosionPrefab;
+
+    private void Start()
+    {
+        playerProgress = FindObjectOfType<PlayerProgress>(true);
+    }
+    public bool IsAlife() 
+    { 
+        return value > 0;
+    }
     public void DealDamage(float damage)
     {
-        value -= damage;
+        playerProgress.AddExperience(damage);
+
+        value -= damage;    
         if (value <= 0)
         {
             OnDeath();
@@ -25,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnDeath()
     {
+        
         animator.SetTrigger("death");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
