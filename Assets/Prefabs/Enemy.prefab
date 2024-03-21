@@ -90,7 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 100
   animator: {fileID: 4866377655617797507}
-  playerProgress: {fileID: 4062275453268477280, guid: 05cb0cd5a13e3f24ba59828f47ad5ad5, type: 3}
   explosionPrefab: {fileID: 0}
 --- !u!136 &6727502955879754129
 CapsuleCollider:

@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     private PlayerHealth _playerHealth;
     private EnemyHealth _enemyHealth;
 
-    
+
     private void Start()
     {
         InitComponentLinks();
@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour
         PatrolUpdate();
     }
 
-    public bool IsAlife() 
+    public bool IsAlife()
     {
         return _enemyHealth.IsAlife();
     }
@@ -63,7 +63,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void NoticePlayerUpdate()
-    {   
+    {
         _isPlayerNoticed = false;
         if (!_playerHealth.IsAlife()) return;
 
