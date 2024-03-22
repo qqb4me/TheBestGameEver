@@ -12,20 +12,21 @@ public class Timer : MonoBehaviour
     public float lifeTime = 60f;
     private float gameTime;
 
+    private void Awake()
+    {
+        gameTime = lifeTime;
+    }
+
     private void Update()
     {
-        timer.text = lifeTime + "sec";
-        gameTime += 1 * Time.deltaTime;
-        if (gameTime >= 1)
+        timer.text = gameTime.ToString("F1") + " sec";
+        gameTime -= Time.deltaTime;
+        
+        if (gameTime < 0)
         {
-            lifeTime -= 1;
-            gameTime = 0;
-        }
-        if (lifeTime <= 0)
-        {
-            int index = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(index + 1);
-            
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            SceneManager.LoadScene("victory");         
         }
 
     }

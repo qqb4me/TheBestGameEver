@@ -53,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
 
         var enemy = Instantiate(enemyPrefab);
         enemy.transform.position = _spawnerPoints[Random.Range(0, _spawnerPoints.Count)].position;
-        enemy.player = player;
+        //enemy.player = player;
         enemy.patrolPoints = patrolPoints;
         _enemies.Add(enemy);
         _timeLastSpawned = Time.time;

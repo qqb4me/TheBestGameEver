@@ -9,13 +9,13 @@ public class EnemyAI : MonoBehaviour
     public float damage = 30;
     public float attackDistance = 1f;
     public List<Transform> patrolPoints;
-    public PlayerController player;
     public Animator animator;
 
     private NavMeshAgent _navMashAgent;
     private bool _isPlayerNoticed;
     private PlayerHealth _playerHealth;
     private EnemyHealth _enemyHealth;
+    private PlayerController _player;
 
 
     private void Start()
@@ -27,7 +27,8 @@ public class EnemyAI : MonoBehaviour
     private void InitComponentLinks()
     {
         _navMashAgent = GetComponent<NavMeshAgent>();
-        _playerHealth = player.GetComponent<PlayerHealth>();
+        _player = FindObjectOfType<PlayerController>(true);
+        _playerHealth = _player.GetComponent<PlayerHealth>();
         _enemyHealth = GetComponent<EnemyHealth>();
     }
 
@@ -67,14 +68,14 @@ public class EnemyAI : MonoBehaviour
         _isPlayerNoticed = false;
         if (!_playerHealth.IsAlife()) return;
 
-        var direction = player.transform.position - transform.position;
+        var direction = _player.transform.position - transform.position;
 
         if (Vector3.Angle(transform.forward, direction) < viewAngel)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position + Vector3.up, direction, out hit))
             {
-                if (hit.collider.gameObject == player.gameObject)
+                if (hit.collider.gameObject == _player.gameObject)
                 {
                     _isPlayerNoticed = true;
                 }
@@ -102,7 +103,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            _navMashAgent.destination = player.transform.position;
+            _navMashAgent.destination = _player.transform.position;
         }
     }
 }
