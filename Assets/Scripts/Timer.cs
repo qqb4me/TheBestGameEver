@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timer.text = gameTime.ToString("F1") + " sec";
+        timer.text =  "Тебе нужно выжить: " + gameTime.ToString("F1") + " sec";
         gameTime -= Time.deltaTime;
         
         if (gameTime < 0)

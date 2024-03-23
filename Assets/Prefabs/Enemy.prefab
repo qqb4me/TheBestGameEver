@@ -46,7 +46,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
@@ -70,11 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00717dd5e443b647850a2f8f258731c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewAngel: 90
+  viewAngel: 100
   damage: 20
   attackDistance: 1.25
   patrolPoints: []
-  player: {fileID: 7369380277683732979, guid: 05cb0cd5a13e3f24ba59828f47ad5ad5, type: 3}
   animator: {fileID: 4866377655617797507}
 --- !u!114 &1876436864501828711
 MonoBehaviour:
