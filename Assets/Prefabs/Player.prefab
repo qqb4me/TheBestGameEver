@@ -270,7 +270,7 @@ MonoBehaviour:
   CameraAxisTransform: {fileID: 7612495185458335399}
   minAngel: -20
   maxAngel: 35
-  RotationSpeed: 1000
+  RotationSpeed: 500
 --- !u!114 &7369380277683732979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  grenadePrefab: {fileID: 775398216081268589, guid: 5e287f359423fc5478a3ed90107f5603, type: 3}
+  grenadePrefab: {fileID: 6056580150809379796, guid: 5e287f359423fc5478a3ed90107f5603, type: 3}
   grenadeSourceTranshorm: {fileID: 2438440156470410863}
   force: 500
 --- !u!114 &4062275453268477280

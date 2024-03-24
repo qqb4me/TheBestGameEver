@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float value = 100;
     public RectTransform valueRectTransform;
+    
 
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
@@ -43,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<FireballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+        GetComponent<Timer>().enabled = false;
         animator.SetTrigger("death");
     }
 

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4965364616464846589}
   - component: {fileID: 3999302680709788296}
   - component: {fileID: 2872447939653373023}
-  - component: {fileID: 775398216081268589}
-  - component: {fileID: 1356280002354153933}
-  - component: {fileID: 5797020239082166384}
+  - component: {fileID: 6056580150809379796}
+  - component: {fileID: 8315775287206572495}
+  - component: {fileID: 4670095204644203982}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &775398216081268589
+--- !u!54 &6056580150809379796
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1356280002354153933
+--- !u!64 &8315775287206572495
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7412bbb5f0e58bf42ab9b15f60d2ad69, type: 2}
---- !u!114 &5797020239082166384
+--- !u!114 &4670095204644203982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,5 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea599bc615b970b489d8dd633912e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
   delay: 1.5
   explosionPrefab: {fileID: 3384417973322918957, guid: 6ab55374fb4d107428e4735963c16079, type: 3}
